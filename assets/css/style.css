@@ -1,0 +1,461 @@
+@keyframes showUp {
+	from {
+		opacity: 0;
+		transform: translate(0, -3em);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 2.5em);
+	}
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+}
+
+body,header,main,footer {
+	width: 100%;
+	font-family: sans-serif;
+}
+
+main {
+	background-color: #fafafa;
+	padding-bottom: 2rem;
+}
+
+aside,article {
+	background: linear-gradient(to bottom, #2a7b69, #263452);
+}
+
+header {
+	display: inline;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav {
+	padding:1em 0;
+	overflow: auto;
+	position: sticky;
+	top: 0;
+	background-color: #263452;
+	z-index: 99;
+	line-height: 2;
+}
+
+nav ul {
+	float: right;
+	margin: auto 0;
+	list-style: none;
+}
+
+nav >.container>ul>li {
+	display: inline-block;
+	padding: 0 1.3em;
+}
+
+nav .container .icon {
+	display: none;
+}
+
+nav a {	
+	color: white;
+	text-decoration: none;
+}
+
+nav >.container>ul>li>a {
+	position: relative;
+	opacity: .5;
+}
+
+nav >.container>ul>li>a::after {
+	content:"";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(0, .5rem);
+	bottom: -5px;
+	height: 1px;
+	width: 100%;
+	background-color: transparent;
+	transition: .7s;
+}
+
+nav >.container>ul>li:hover a {
+	opacity: 1;
+}
+
+nav >.container >ul >li:hover a::after {
+	transform: scale(1.2);
+	background-color: white;
+}
+
+.jumbotron {
+	background: url('../images/background.svg') no-repeat center center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+.jumbotron-left {
+	float: left;
+	margin-top: 1.5em;
+	width: 30%;	
+	height: 100%;
+	padding-bottom: 1.5em;
+
+}
+
+.jumbotron-right {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	right: 0;
+	text-align: right;
+	color: white;
+	margin-right: 10%;
+}
+
+main >.container {
+	padding: 3.5rem 0;
+}
+
+main >.container>#main-heading {
+	padding: 2.5em 0 1.5em 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+	position: relative;
+}
+
+main >.container>#main-heading::before {
+	content: "";
+	width: 150px;
+	position: absolute;
+	bottom: 1.4em;
+	height: 5px;
+	border-radius: 3px;
+	background: -webkit-linear-gradient(left, #2a7b69, #263452);
+	background: -o-linear-gradient(left, #2a7b69, #263452);
+	background: linear-gradient(to right, #2a7b69, #263452);
+}
+
+.card {
+	display: flex;
+	border-radius: 4px;
+	box-shadow: 0 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.container-article {
+	align-items: center;
+	overflow: auto;
+	margin-bottom: 2.3rem;
+}
+
+.planet{
+	width: 100%;
+}
+
+.right-content-planet {
+	flex-direction: row-reverse;
+}
+
+.planet{
+	padding: 1.5em;
+} 
+
+.description {
+	font-size: 1vw;
+	text-indent: 1em;
+	line-height: 1.5;
+	color: white;
+	padding: 2.1em;
+}
+
+aside >.container {
+	padding: 2rem 0;
+}
+
+aside >.container >.aside-heading {
+	color: white;
+	text-align: center;
+	margin: 1em 0;
+	position: relative;
+}
+
+aside >.container> #main-heading::before {
+	content: "";
+	width: 150px;
+	position: absolute;
+	bottom: 1.4em;
+	height: 5px;
+	border-radius: 3px;
+	background-color: white;
+}
+
+aside >.container>.card {
+	display: flex;
+	padding: 1.5em;
+	width: 100%;
+	background-color: white;
+	align-items: center;
+}
+
+aside >.container>.card>div {
+	margin: 0 1.5rem;
+}
+
+aside .container >.card >.myImage {
+	width: 25%;
+	padding: 1em;
+	position: relative;
+}
+
+aside .container >.card >.myImage>img {
+	width: 100%;
+	z-index: 2;
+}
+
+aside .container >.card>.content-me {
+	position: relative;
+	padding: .5em;
+	font-size: 1vw;
+}
+
+aside .container >.card >.content-me::before {
+	content: "";
+	position: absolute;
+	width: 1.5px;
+	height: 70%;
+	left: -1.5em;
+	top: 50%;
+	transform: translate(0, -50%);
+	background-color: rgba( 0,0,0,.5);
+}
+
+aside .container >.card >.content-me >table tr td {
+	padding: 1.5px .5em;	
+}
+
+aside .container >.card >.content-me >.icon-medsos {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translate(100%, -50%);
+	opacity: 0;
+}
+
+aside .container >.card >.content-me >.icon-medsos >ul {
+	display: flex;
+	justify-content: space-evenly;
+	list-style: none;
+	font-size: 24px;
+}
+
+aside .container >.card >.content-me >.icon-medsos >ul li i {
+	background-color: #2a7b69;
+	color: white;
+	width: 2.5em;
+	height: 2.5em;
+	line-height: 2.5;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+aside .container >.card >.content-me >.hide-table {
+	opacity: 0;
+	position: relative;
+	transform: translate(-200%, 0);
+	transition: opacity .5s ease-out,
+							transform 5s ease-out;	
+}
+
+aside .container >.card >.content-me >.show-icon {
+	opacity: 1;
+	top: 50%;
+	transform: translate(-1.5em, -50%);
+	transition: opacity 1s ease-in,
+							transform .5s ease-in;
+}
+
+aside .container >.card >.content-me >.show-table {
+	opacity: 1;
+	position: relative;
+	transform: translate(0, 0);
+	transition: opacity 1.5s ease-out,
+							transform 1s ease-out;	
+}
+
+aside .container >.card >.content-me >.hide-icon {
+	opacity: 0;
+	top: 50%;
+	transform: translate(100%, -50%);
+	transition: opacity .5s ease-in,
+							transform 1s ease-in;
+}
+
+aside .container>.card >.content-me >.icon-medsos>ul li .fa-facebook-f:hover {
+	color: #3b5998;
+	background-color: transparent;
+}
+
+aside .container >.card >.content-me >.icon-medsos>ul li .fa-twitter:hover {
+	color: #00acee;
+	background-color: transparent;
+}
+
+aside .container >.card >.content-me >.icon-medsos>ul li .fa-instagram:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(blueviolet));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+aside .container >.card >.content-me > .icon-next, aside .container >.card >.content-me > .icon-prev {
+	font-size: 20px;
+	color: #333;
+	position: absolute;
+	right: -1.5em;
+	cursor: pointer;
+}
+
+aside .container >.card >.content-me > .icon-prev {
+	display: none;
+}
+
+footer {
+	font-size: 1.2vw;
+	color: #333;
+	text-align: center;
+	line-height: 1.5;
+	padding: 1.5rem 0;
+	background-color: #fafafa;
+	position: sticky;
+	bottom: 0;
+	z-index: -2;
+}
+
+
+
+/* MEDIA QUERY FOR RESPONSIVE WEB */
+
+@media only screen and (max-width: 950px) {
+	.description {
+		font-size: 1.5vw;
+	}
+	aside .container>.card>.content-me>table {
+		font-size: 1.5vw;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	nav {
+		line-height: 1;
+	}
+	nav .container span {
+		line-height: 2;
+	}
+	nav  .container ul li {
+		display: none;
+	}
+	
+	nav .container .icon {
+		display: inline-block;
+		float: right;
+		margin-right: 5%;
+		font-size: 1em;
+		color: white;
+		cursor: pointer;
+	}
+
+	/* added small-nav*/
+	nav .container .small-nav {
+		position: relative;
+		top: 1.5em;
+		transform: translateY(-.5em);
+		width: 100%;
+		transition: ease-in-out .5s;
+	}
+
+	nav .container .small-nav li {
+		display: block;
+		text-align: center;
+		padding: 1.5em;
+	}
+
+	nav .container .small-nav li a {
+		color: white;
+		line-height: 1.5;
+		font-size: 12px;
+	}
+	/*  */
+
+	.jumbotron-right p {
+		margin-left: auto; 
+		width: 80%;
+		font-size: 12px;
+	}
+	
+	.card {
+		flex-wrap: wrap;
+	}
+
+	.description {
+		font-size: 3vw;
+	}
+	
+	aside >.container>.card >.myImage {
+		width: 90%;
+	}
+
+	aside >.container>.card >.content-me>table {
+		font-size: 3vw;
+	}
+
+	aside >.container>.card >.content-me::before {
+		display: none;		
+	}
+	
+	aside .container >.card >.content-me >.icon-medsos >ul {
+		justify-content: space-around;
+	}
+
+	footer {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	aside .container >.card >.content-me >.icon-medsos >ul li i {
+		width: 2em;
+		height: 2em;
+		line-height: 2;
+		font-size: 16px;
+	}
+	aside >.container>.card>div {
+	margin: 0 auto;
+	}
+	aside .container >.card >.content-me >.icon-med .fa-facebook{
+		width: 1.5em;
+		height: 1.5em;
+		line-height: 1.5;
+	}
+	aside .container >.card >.content-me >.icon-next,
+	aside .container >.card >.content-me >.icon-prev {
+		right: .5em;
+	}
+}
